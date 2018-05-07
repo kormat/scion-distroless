@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Extract a single file ($2) from a tarball ($1) and store it in a specific dir ($3, optional)
+
+tarball="${1:?}"
+shift
+fname="${1:?}"
+shift
+outdir="${1:-.}"
+
+# Count the number of /'s in $fname, so we can strip leading dirs in the tarball.
+levels="$(echo $fname | tr -cd '/' | wc -c)"
+
+tar xaf "$tarball" -C "$outdir" --strip-components="$levels" "$fname"
