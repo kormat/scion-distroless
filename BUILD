@@ -1,7 +1,7 @@
 package(default_visibility = ["//visibility:public"])
 
 load("@io_bazel_rules_docker//container:container.bzl", "container_bundle")
-load("//:variables.bzl", "DOCKER_ORG", "SCION_BASE_DIGEST")
+load("//:variables.bzl", "DOCKER_ORG")
 
 container_bundle(
     name = "app_base",

@@ -5,7 +5,7 @@ load("//:variables.bzl", "SU_EXEC_COMMIT", "SU_EXEC_SHA256")
 git_repository(
     name = "io_bazel_rules_go",
     remote = "https://github.com/bazelbuild/rules_go.git",
-    tag = "0.11.1",
+    tag = "0.12.0",
 )
 
 load("@io_bazel_rules_go//go:def.bzl", "go_rules_dependencies", "go_register_toolchains")
@@ -141,6 +141,6 @@ git_repository(
 
 http_file(
     name = "suexec_source",
-    url = "https://github.com/kormat/su-exec/archive/customize.tar.gz",
+    url = "https://github.com/anapaya/su-exec/archive/" + SU_EXEC_COMMIT + ".tar.gz",
     sha256 = SU_EXEC_SHA256,
 )

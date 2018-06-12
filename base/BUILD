@@ -11,8 +11,6 @@ container_image(
     ],
     env = {"PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"},
     tars = [
-        "@distroless//base:passwd_tar",
-        "@distroless//base:group_tar",
         "@distroless//base:tmp.tar",
         "@distroless//base:nsswitch.tar",
         "@debian_stretch//file:os_release.tar",
